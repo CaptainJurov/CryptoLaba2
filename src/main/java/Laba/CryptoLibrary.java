@@ -9,7 +9,6 @@ public class CryptoLibrary {
     public interface EncryptionAlgorithm {
         CryptoResult encrypt(BigInteger number);
         BigInteger decrypt(CryptoResult encrypted);
-        String getAlgorithmName();
     }
     public static class CryptoResult {
         public BigInteger[] values;
@@ -76,12 +75,6 @@ public class CryptoLibrary {
 
             return result;
         }
-
-        @Override
-        public String getAlgorithmName() {
-            return "Shamir";
-        }
-
         public BigInteger getP() { return p; }
         public BigInteger getCa() { return ca; }
         public BigInteger getDa() { return da; }
@@ -161,10 +154,6 @@ public class CryptoLibrary {
             return result;
         }
 
-        @Override
-        public String getAlgorithmName() {
-            return "ElGamal";
-        }
 
         public BigInteger getP() { return p; }
         public BigInteger getG() { return g; }
@@ -198,12 +187,6 @@ public class CryptoLibrary {
             BigInteger key = encrypted.values[1];
             return ciphertext.xor(key);
         }
-
-        @Override
-        public String getAlgorithmName() {
-            return "Vernam";
-        }
-
         public BigInteger getKey() { return key; }
     }
     public static class RSACipher implements EncryptionAlgorithm {
@@ -254,10 +237,6 @@ public class CryptoLibrary {
             return ciphertext.modPow(d, n);
         }
 
-        @Override
-        public String getAlgorithmName() {
-            return "RSA";
-        }
 
         public BigInteger getN() { return n; }
         public BigInteger getE() { return e; }

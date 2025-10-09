@@ -24,10 +24,9 @@ public class Main {
         printWelcome();
         initializeAlgorithms();
         BigInteger[] kawaiiNumbers = {
-                BigInteger.valueOf(42),      // Ответ на всё
-                BigInteger.valueOf(777),     // Счастливое число
-                BigInteger.valueOf(100),     // Симметричное
-                BigInteger.valueOf(255)      // Максимальный байт
+                BigInteger.valueOf(52), //Город Санкт Петергук наш
+                BigInteger.valueOf(777),  //???
+                BigInteger.valueOf(39) //Miku dayo~~~ <3
         };
         for (int i = 0; i < kawaiiNumbers.length; i++) {
             printTestHeader(i + 1, kawaiiNumbers[i]);
